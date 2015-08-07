@@ -27,21 +27,13 @@ class TableViewCell: UITableViewCell {
         label.numberOfLines = 0
         label.setTranslatesAutoresizingMaskIntoConstraints(false)
         label.lineBreakMode = .ByWordWrapping
-        label.setContentCompressionResistancePriority(1000, forAxis: UILayoutConstraintAxis.Vertical)
-        label.setContentCompressionResistancePriority(1000, forAxis: UILayoutConstraintAxis.Horizontal)
-        label.setContentHuggingPriority(1000, forAxis: .Vertical)
-        label.setContentHuggingPriority(1000, forAxis: .Horizontal)
         self.contentView.addSubview(label)
         self.contentView.addConstraints([
             NSLayoutConstraint(item: label, attribute: .Left, relatedBy: .Equal, toItem: self.contentView, attribute: .Left, multiplier: 1.0, constant: 15),
             NSLayoutConstraint(item: label, attribute: .Right, relatedBy: .Equal, toItem: self.contentView, attribute: .Right, multiplier: 1.0, constant: -15),
             NSLayoutConstraint(item: label, attribute: .Top, relatedBy: .Equal, toItem: self.contentView, attribute: .Top, multiplier: 1.0, constant: 5),
-            NSLayoutConstraint(item: label, attribute: .Height, relatedBy: .GreaterThanOrEqual, toItem: nil, attribute: .NotAnAttribute, multiplier: 1.0, constant: 20),
-            
-            NSLayoutConstraint(item: self.contentView, attribute: .Bottom, relatedBy: .GreaterThanOrEqual, toItem: label, attribute: .Bottom, multiplier: 1.0, constant: 10),
+            NSLayoutConstraint(item: label, attribute: .Bottom, relatedBy: .LessThanOrEqual, toItem: self.contentView, attribute: .Bottom, multiplier: 1.0, constant: -10),
             ])
-        
-        
         
     }
 

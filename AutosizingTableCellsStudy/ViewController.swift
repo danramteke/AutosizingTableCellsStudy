@@ -12,9 +12,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let tableView = UITableView(frame: CGRectZero, style: UITableViewStyle.Plain)
 
     let cellData = [
+        
+        "At such a scale, even the best existing technologies wouldn’t have made this iMac possible. So we did the impossible — developing a display with the performance to light up 14.7 million pixels, reducing energy consumption while maintaining our high standard for brightness, and advancing image quality for the most striking contrast ever.",
+        "To create the astonishingly thin silhouette of iPad Air 2, we started by redesigning the Retina display, fusing what had been three layers into one. Not only did this make the display thinner, it made it better, with more vivid colors and greater contrast. Then we added an antireflective coating, giving iPad Air 2 the least reflective display of any tablet in the world.",
         "a short cell",
-        "a very long cell with lots of text so much text that I can hardly read it. Wow. Wow. One two three. Itchy knee son she.",
-        "a medium cellular data plan"
+        "The little plentiful manikins skipping around in collars and tail'd coats\nI am aware who they are, (they are positively not worms or fleas,)\nI acknowledge the duplicates of myself, the weakest and shallowest is deathless with me,\nWhat I do and say the same waits for them,\nEvery thought that flounders in me the same flounders in them."
+        
     ]
     
     
@@ -37,6 +40,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        // this seems to be the important line.
         cell.layoutIfNeeded()
     }
     
